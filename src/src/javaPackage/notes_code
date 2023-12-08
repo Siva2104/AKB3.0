@@ -1,0 +1,294 @@
+     ///Bulk upload in document
+//		     System.out.println("Hover Document..Bulk upload Document");
+//		 	//document hover
+//		     WebElement Document_module1 = driver.findElement(By.id("doc-nav"));
+//			//Action for hovering 
+//				 Actions act1 = new Actions(driver);
+//				 act1.moveToElement(Document_module1).perform();
+////				 Thread.sleep(8000);
+//				 driver.findElement(By.xpath("  //*[@id=\"doc-nav\"]/ul/li[2]/a")).click();
+//			     Thread.sleep(8000);    
+//			     driver.findElement(By.id("search-nav")).click();
+//			     Thread.sleep(5000);
+//			     
+//			     
+//			     ///Bulk upload metadata
+//			     System.out.println("Hover Document..metadata upload Document");
+//			 	//document hover
+//			     WebElement Document_module11 = driver.findElement(By.id("doc-nav"));
+//				//Action for hovering 
+//					 Actions act11 = new Actions(driver);
+//					 act11.moveToElement(Document_module11).perform();
+////					 Thread.sleep(8000);
+//					 driver.findElement(By.xpath("//*[@id=\"doc-nav\"]/ul/li[3]/a")).click();
+//				     Thread.sleep(8000);    
+//				     driver.findElement(By.id("search-nav")).click();
+//				     Thread.sleep(5000); 
+//			     
+
+
+
+
+
+
+
+
+
+
+-----------
+
+webElement name = we
+
+
+String year="2022";
+		String month="Apr";
+		String date="18";
+ 
+		while(true)
+		{
+			String mon=driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/div/div/select[1]")).getText();	    
+			String  yr=driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/div/div/select[2]")).getText();
+			if(mon.equals(month) && yr.equals(year)){
+				break;
+			}
+			//Forward button
+			driver.findElement(By.xpath("//*[@id=\"ui-datepicker-div\"]/div/a[1]/span")).click();
+		} 
+		//Select Date
+		List<WebElement> allDates=driver.findElements(By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody"));
+		System.out.println(allDates);
+		for(WebElement dt: allDates)
+		{
+			if(dt.getText().equals(date)) {
+				dt.click();
+			}
+		}
+
+has context menu
+Compose
+
+
+
+
+
+
+
+
+-------------------login
+
+//username	
+		System.out.println("Logining with credential..");
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		WebElement email1 = driver.findElement(By.id("eud"));
+		email1.isDisplayed();
+		email1.isEnabled();		
+		email1.sendKeys("arputhamalar.v@tcs.com");
+		//			Thread.sleep(3000);
+		//pssword
+		System.out.println("Entering password..");
+		WebElement password1 = driver.findElement(By.id("epd"));
+		password1.isDisplayed();
+		password1.isEnabled();		
+		password1.sendKeys("Tcs#1234");
+		//			Thread.sleep(3000);
+--------------------------------------------windowSwitch
+
+ArrayList<String> w = new ArrayList<String>(driver.getWindowHandles());
+driver.findElement(By.xpath("//*[@id='main-content']/div[2]/div[2]/div[4]/div[2]/div[1]/div[1]/div/a")).click();
+Thread.sleep(8000);
+driver.switchTo().window(w.get(0));
+Thread.sleep(8000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===========================================
+
+package Package;
+
+import org.apache.commons.io.FileUtils;
+
+
+import org.apache.poi.ss.usermodel.Cell;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.junit.After;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+
+@SuppressWarnings("unused")
+
+public class tag_module {
+	@Test(priority=1)
+	public void review_module() throws InterruptedException, AWTException, IOException {
+				System.setProperty("webdriver.chrome.driver","C:\\Users\\1925566\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+				WebDriver driver = new ChromeDriver();
+				driver.manage().window().maximize();
+				driver.get("https://10.11.144.178:8107/home/login/1/");
+				//implicitWait
+				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	 
+				FileInputStream fs = new FileInputStream("C:\\BFSI_test\\automation\\login_test.xlsx");
+				//Creating a workbook   (String.valueOf(version))
+				@SuppressWarnings("resource")
+				XSSFWorkbook workbook = new XSSFWorkbook(fs);
+				XSSFSheet sheet = workbook.getSheetAt(0);
+				int username2=(int) sheet.getRow(7).getCell(0).getNumericCellValue();
+				System.out.println(username2);	
+				String password1=sheet.getRow(7).getCell(1).getStringCellValue();
+				System.out.println(password1);
+				driver.findElement(By.id("eud")).sendKeys(String.valueOf(username2));
+				driver.findElement(By.id("epd")).sendKeys(password1);
+				driver.findElement(By.id("login")).click();	
+				
+				
+//**Scenarion 1 : Tag_Pending_Toggle	
+ 
+				System.out.println("Tag_Pending_Toggle");			
+				driver.findElement(By.id("pending-nav")).click();					
+				System.out.println("Passed test case:TC0388");
+				//Search any document with doc id
+				driver.findElement(By.id("search-doc-name")).sendKeys("23");
+				System.out.println("Passed test case:TC0389");
+				driver.findElement(By.id("search-doc-name")).clear();
+				//Negative
+				//with name
+				driver.findElement(By.id("search-doc-name")).sendKeys("User");
+				System.out.println("Passed test case:TC0390");
+				//spaces
+				driver.findElement(By.id("search-doc-name")).sendKeys("    ");
+				System.out.println("Passed test case:TC0391");
+				
+				
+// Add a Tag : TC0392	
+				
+				driver.findElement(By.xpath("//*[@id=\"suggestedtags\"]")).click();
+				System.out.println("Passed test case:TC0392");
+				System.out.println("Passed test case:TC0393");
+				System.out.println("Passed test case:TC0394");
+				
+				
+				driver.findElement(By.id("docname-tag")).sendKeys("user");  
+				driver.findElement(By.xpath("/html/body/ul/li[1]/div")).click();
+				System.out.println("Passed test case:TC0395");
+				driver.findElement(By.id("tagname-user")).sendKeys("new-user");   
+				System.out.println("Passed test case:TC0396");
+				driver.findElement(By.id("tag-add")).click(); 	
+				System.out.println("Passed test case:TC0397");
+				//save-btn  
+				driver.findElement(By.id("tag-save")).click();  
+				
+				driver.findElement(By.xpath("//*[@id=\"stagModal\"]/div/div/div[1]/button")).click();  
+				System.out.println("Passed test case:TC0399");
+
+	}
+	  @Test(priority=2)
+	  public void beforeMethod() throws IOException, InterruptedException {
+		  
+		  System.setProperty("webdriver.chrome.driver","C:\\Users\\1925566\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+			WebDriver driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.get("https://10.11.144.178:8107/home/login/1/");
+			//implicitWait
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+			FileInputStream fs = new FileInputStream("C:\\BFSI_test\\automation\\login_test.xlsx");
+			//Creating a workbook   (String.valueOf(version))
+			@SuppressWarnings("resource")
+			XSSFWorkbook workbook = new XSSFWorkbook(fs);
+			XSSFSheet sheet = workbook.getSheetAt(0);
+			int username2=(int) sheet.getRow(7).getCell(0).getNumericCellValue();
+			System.out.println(username2);	
+			String password1=sheet.getRow(7).getCell(1).getStringCellValue();
+			System.out.println(password1);
+			driver.findElement(By.id("eud")).sendKeys(String.valueOf(username2));
+			driver.findElement(By.id("epd")).sendKeys(password1);
+			driver.findElement(By.id("login")).click();	
+			
+			
+			//Toggle_Active_toggle
+			driver.findElement(By.id("pending-nav")).click();	
+			driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/div[3]/label/span")).click();	
+			System.out.println("Passed test case:TC0400");
+			System.out.println("Passed test case:TC0401");
+			
+			
+			
+			/*Scenarios
+			 * Search-File
+			 * Try to Download the File
+			 * Try to view
+			 * Cancel the approved tags 
+			 * */
+			
+			//with name   
+			driver.findElement(By.id("search-doc-name")).sendKeys("User");
+//			driver.findElement(By.xpath("//*[@id=\"docid38\"]/a")).click();  //Download
+			System.out.println("Passed test case:TC0402");
+			//Cancel-403
+			driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div[1]/table/tbody/tr[2]/td[4]/a")).click(); //view
+			System.out.println("Passed test case:TC0404");
+			ArrayList<String> w = new ArrayList<String>(driver.getWindowHandles()); Thread.sleep(3000);			
+			driver.switchTo().window(w.get(0));
+			
+			
+			driver.findElement(By.id("doc-clear-icon")).click();
+			
+			
+		/*
+		 * *TagModule-End *
+		 * 
+		 * */
+			
+			
+	  }
+}

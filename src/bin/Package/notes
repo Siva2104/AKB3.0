@@ -1,0 +1,45 @@
+Filters
+Filters-select 4 option on each
+Search Flter
+result 
+save filter
+
+
+
+
+---learning 
+
+Mouse hover-- moveToElement().perform()
+contextClick
+
+
+
+---------------------------file upload
+scenario --> windows-->filename & open or enter()ctrl+v
+
+upload--> 
+1. in the upload of file--> first we have to use tooltip lib--> 
+tooltip-->getDefaultToolkit()-->getSystemClipboard()-->getcontent()
+2. string selection class
+3. Toolkit-->defaultoolkit-->getsystem-->setcontent
+
+
+
+-----------------------------------------------------
+
+06-11-2023
+
+page scroll>>>
+
+javascript executor>>
+
+
+
+
+----------------------------------31-10
+
+Action Class Hover
+
+------------07
+
+excel :: screen capture
