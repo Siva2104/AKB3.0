@@ -16,7 +16,7 @@ public class ScreenshotClass {
            // Capture screenshot
            File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
            // Specify the parent folder path where you want to save the screenshots
-           String parentFolderPath = "C:\\BFSI_test\\automation\\PASS\\Quiz_module\\";
+           String parentFolderPath = "C:\\BFSI_test\\automation\\PASS\\Document_module\\";
            // Create a folder based on the test case name
            String folderPath = parentFolderPath + testCaseName + "\\";
            new File(folderPath).mkdirs(); // Create folder if not exists

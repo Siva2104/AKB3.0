@@ -2,6 +2,21 @@ package src.javaPackage;
 
 
 import java.awt.AWTException;
+import java.io.IOException;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import java.awt.AWTException;
 import java.awt.Desktop.Action;
 import java.awt.Robot;
 import java.awt.Toolkit;
@@ -24,85 +39,52 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.io.IOException;
 @SuppressWarnings("unused")
 
-		public class document_module extends Test1 {
 
 			// public static void main(String[] args) throws InterruptedException, AWTException{
-			@Test 
-			public void Login() throws InterruptedException, AWTException {		
-				System.setProperty(
-						"webdriver.chrome.driver",
-						"C:\\Users\\1925566\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
-				// Instantiate a ChromeDriver class.
-				WebDriver driver = new ChromeDriver();
-
-				// Maximize the browser
-				driver.manage().window().maximize();
-				//			driver.wait(2000);
-				// Launch Website
-
-
-				driver.get("https://10.11.144.178:8107/home/login/1/");
-
-				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-//							WebElement email = driver.findElement(By.id("eud"));
-//							email.isDisplayed();
-//							email.isEnabled();		
-//							email.sendKeys("Shiva");
-//							email.clear();
-//							
-//							WebElement password = driver.findElement(By.id("epd"));
-//							password.isDisplayed();
-//							password.isEnabled();		
-//							password.sendKeys("123");
-//							password.clear();
-//				//	
-//				//			
-//							WebElement button = driver.findElement(By.id("login"));
-//							button.isDisplayed();
-//							button.isEnabled();	
-//							button.click();
-				//username	
-				System.out.println("Logining with credential..");
-				WebDriverWait wait = new WebDriverWait(driver,30);
-				WebElement email1 = driver.findElement(By.id("eud"));
-				email1.isDisplayed();
-				email1.isEnabled();		
-				email1.sendKeys("1999002");
-				//pssword
-				System.out.println("Entering password..");
-				WebElement password1 = driver.findElement(By.id("epd"));
-				password1.isDisplayed();
-				password1.isEnabled();		
-				password1.sendKeys("Tcs#1234");
-
-				//signin button
-				WebElement button1 = driver.findElement(By.id("login"));
-				button1.isDisplayed();
-				button1.isEnabled();	
-				button1.click();
-				Thread.sleep(3000);
-				System.out.println("opening homepge..");
-
-				System.out.println("Passed test cases TC00028 & TC00030");	
+			
+public class document_module extends Test1{		
+	
+	
+	@Test(priority = 1, description = "hovering document module", alwaysRun = true)
+	public void Document_module() throws InterruptedException, AWTException, IOException {
+		//**hovering over documents
+		 
+					//manage document
+					 Thread.sleep(2000);
+					
+					//document hover
+					WebDriverWait wait = new WebDriverWait(driver, 10);
+					driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); Thread.sleep(2000);
+					//Hovering
+					
+					WebElement Document_module = driver.findElement(By.id("doc-nav"));  //doc-nav
+					System.out.println("Test case passed :TC0096");
+					 ScreenshotClass.captureScreenshot(driver, "TC0096");
+					//Action for hovering 
+					System.out.println("Hover Document..Manage Document");
+					Actions act = new Actions(driver);
+					act.moveToElement(Document_module).perform();
+					//click
+					System.out.println("Test case passed :TC0097");
+					 ScreenshotClass.captureScreenshot(driver, "TC0097");
+					driver.findElement(By.xpath("//*[@id=\"doc-nav\"]/ul/li[1]/a")).click();
+					System.out.println("Test case passed :TC0098");
+					 ScreenshotClass.captureScreenshot(driver, "TC0098");
+					
 				
-				
-				
-	//**hovering over documents
-	 
-				//manage document
-				System.out.println("Hover Document..Manage Document");
-				//document hover
-				WebElement Document_module = driver.findElement(By.id("doc-nav"));  //doc-nav
-				//Action for hovering 
-				System.out.println("Hover Document..Manage Document");
-				Actions act = new Actions(driver);
-				act.moveToElement(Document_module).perform();
-				//			 Thread.sleep(8000);
-				driver.findElement(By.xpath("//*[@id=\"doc-nav\"]/ul/li[1]/a")).click();
-				//		     Thread.sleep(5000);	     
+					
+					
+					
+					
+					
+					
+					
+			
+}
+			
 
 				
 				
@@ -1048,8 +1030,8 @@ import java.io.File;
 
 
 
-
-
-	}
-
 }
+
+	
+
+

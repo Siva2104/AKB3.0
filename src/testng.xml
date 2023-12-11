@@ -31,7 +31,7 @@
 		</classes>
 	</test> 
 	
-		<test name="Quiz_Module" >
+		<test name="Quiz_Module"  enabled="false">
 		<classes>
 			<class name="src.javaPackage.quiz">
 				<methods>

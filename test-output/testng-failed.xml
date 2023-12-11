@@ -7,7 +7,6 @@
         <methods>
           <include name="browser"/>
           <include name="Discussion_forum"/>
-          <include name="collaboration_module"/>
         </methods>
       </class> <!-- src.javaPackage.quiz -->
     </classes>
