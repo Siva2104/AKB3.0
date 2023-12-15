@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
 
-<suite name="profile_signOut">
+<suite name="AKB 3.0">
 	   <test name="Tag" enabled="false">
 			<classes>
 				<class name="src.javaPackage.tag_module">
@@ -31,7 +31,7 @@
 		</classes>
 	</test> 
 	
-		<test name="Quiz_Module" >
+		<test name="Quiz_Module"  enabled="false">
 		<classes>
 			<class name="src.javaPackage.quiz">
 				<methods>
@@ -42,6 +42,20 @@
 					<include name="My_queue" />
 					<include name="pending_action" />
 					<include name="my_discussion" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Document_module"  >
+		<classes>
+			<class name="src.javaPackage.document_module">
+				<methods>
+					<include name="Document_module" />
+					<include name="Search_documents" />
+					<include name="view_document" />
+					<include name="Filters" />
+					<include name="Filters_categories" />
+					
 				</methods>
 			</class>
 		</classes>

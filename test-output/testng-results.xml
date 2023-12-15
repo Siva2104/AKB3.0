@@ -2,23 +2,23 @@
 <testng-results ignored="0" total="2" passed="0" failed="0" skipped="2">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-08T11:49:09 IST" name="Default suite" finished-at="2023-12-08T11:49:37 IST" duration-ms="27466">
+  <suite started-at="2023-12-14T12:14:55 IST" name="Default suite" finished-at="2023-12-14T12:15:11 IST" duration-ms="15265">
     <groups>
     </groups>
-    <test started-at="2023-12-08T11:49:09 IST" name="Default test" finished-at="2023-12-08T11:49:37 IST" duration-ms="27466">
-      <class name="src.javaPackage.quiz">
-        <test-method is-config="true" signature="browser()[pri:0, instance:src.javaPackage.quiz@389b0789]" started-at="2023-12-08T11:49:09 IST" name="browser" description="Lauching the Browser" finished-at="2023-12-08T11:49:37 IST" duration-ms="27400" status="FAIL">
+    <test started-at="2023-12-14T12:14:55 IST" name="Default test" finished-at="2023-12-14T12:15:11 IST" duration-ms="15265">
+      <class name="src.javaPackage.document_module">
+        <test-method is-config="true" signature="browser()[pri:0, instance:src.javaPackage.document_module@163370c2]" started-at="2023-12-14T12:14:55 IST" name="browser" description="Lauching the Browser" finished-at="2023-12-14T12:15:11 IST" duration-ms="15188" status="FAIL">
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
               <![CDATA[java.net.SocketException: Connection reset
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:54:15.039Z'
-System info: host: '01HW1889862', ip: '172.24.26.58', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+System info: host: '01HW1889862', ip: '192.168.1.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
 Driver info: driver.version: RemoteWebDriver]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.WebDriverException: java.net.SocketException: Connection reset
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:54:15.039Z'
-System info: host: '01HW1889862', ip: '172.24.26.58', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+System info: host: '01HW1889862', ip: '192.168.1.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
 Driver info: driver.version: RemoteWebDriver
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:91)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
@@ -82,18 +82,18 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browser -->
-        <test-method signature="collaboration_module()[pri:1, instance:src.javaPackage.quiz@389b0789]" started-at="2023-12-08T11:49:37 IST" name="collaboration_module" description="Opening_Collaboration" finished-at="2023-12-08T11:49:37 IST" duration-ms="0" status="SKIP">
+        <test-method signature="Document_module()[pri:1, instance:src.javaPackage.document_module@163370c2]" started-at="2023-12-14T12:15:11 IST" name="Document_module" description="hovering document module" finished-at="2023-12-14T12:15:11 IST" duration-ms="0" status="SKIP">
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
               <![CDATA[java.net.SocketException: Connection reset
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:54:15.039Z'
-System info: host: '01HW1889862', ip: '172.24.26.58', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+System info: host: '01HW1889862', ip: '192.168.1.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
 Driver info: driver.version: RemoteWebDriver]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.WebDriverException: java.net.SocketException: Connection reset
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:54:15.039Z'
-System info: host: '01HW1889862', ip: '172.24.26.58', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+System info: host: '01HW1889862', ip: '192.168.1.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
 Driver info: driver.version: RemoteWebDriver
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:91)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
@@ -156,19 +156,19 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
           </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- collaboration_module -->
-        <test-method signature="Discussion_forum()[pri:3, instance:src.javaPackage.quiz@389b0789]" started-at="2023-12-08T11:49:37 IST" name="Discussion_forum" description="Start Discussion" finished-at="2023-12-08T11:49:37 IST" duration-ms="0" status="SKIP">
+        </test-method> <!-- Document_module -->
+        <test-method signature="AddFile()[pri:5, instance:src.javaPackage.document_module@163370c2]" started-at="2023-12-14T12:15:11 IST" name="AddFile" description="Add a File" finished-at="2023-12-14T12:15:11 IST" duration-ms="0" status="SKIP">
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
               <![CDATA[java.net.SocketException: Connection reset
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:54:15.039Z'
-System info: host: '01HW1889862', ip: '172.24.26.58', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+System info: host: '01HW1889862', ip: '192.168.1.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
 Driver info: driver.version: RemoteWebDriver]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.WebDriverException: java.net.SocketException: Connection reset
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:54:15.039Z'
-System info: host: '01HW1889862', ip: '172.24.26.58', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+System info: host: '01HW1889862', ip: '192.168.1.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
 Driver info: driver.version: RemoteWebDriver
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:91)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
@@ -231,8 +231,8 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
           </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Discussion_forum -->
-      </class> <!-- src.javaPackage.quiz -->
+        </test-method> <!-- AddFile -->
+      </class> <!-- src.javaPackage.document_module -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

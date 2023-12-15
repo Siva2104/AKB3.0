@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="src.javaPackage.quiz">
+      <class name="src.javaPackage.document_module">
         <methods>
           <include name="browser"/>
-          <include name="Discussion_forum"/>
-          <include name="collaboration_module"/>
+          <include name="Document_module"/>
+          <include name="AddFile"/>
         </methods>
-      </class> <!-- src.javaPackage.quiz -->
+      </class> <!-- src.javaPackage.document_module -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

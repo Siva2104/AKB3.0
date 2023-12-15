@@ -293,7 +293,12 @@ public class quiz extends Test1 {
 	
 	
 	
-	
+/** Verify the completed quiz - TC0491
+ * Colur verification - TC0492
+ * verify the Percentage - TC0522
+ *  TC0524
+ *  
+ *  **/	
 	
 	
 	
